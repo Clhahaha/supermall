@@ -16,7 +16,7 @@ export default {
   },
   data(){
       return{
-            activeColor:"red"
+            activeColor:"#ff8198"
       }
   },
   computed:{
