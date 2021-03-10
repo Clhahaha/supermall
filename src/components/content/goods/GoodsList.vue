@@ -1,7 +1,6 @@
 <template>
   <div class="goods">
     <goods-list-item v-for="(item,index) in goods" :key="index" :goodsItem="item"></goods-list-item>
-      {{goods}}
   </div>
 </template>
 
@@ -24,6 +23,7 @@ export default {
 
 <style>
   .goods{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-around; */

@@ -1,6 +1,6 @@
 <template>
-    <div class="goodsItem">
-        <img :src="goodsItem.show.img" alt="">
+    <div class="goodsItem" @click="goodsItemClick">
+        <img :src="showImage" alt="">
         <div>
             <p>{{goodsItem.title}}</p>
             <span class="price">￥{{goodsItem.price}}</span>
@@ -18,6 +18,20 @@ export default {
                 return[]
             }
         }
+    },
+
+    computed:{
+        showImage(){
+            return this.goodsItem.image || this.goodsItem.show.img
+        }
+    },
+
+    methods:{
+        goodsItemClick(){
+            this.$router.push('/detail/' + this.goodsItem.iid)//注意$router和$route不一样console.log(this.$route.path)
+            //在使用了$router跳转路由时，路由对象会被存入$route中，并且切换路由时，$route也会跟着更新
+            //$router是跳转路径  $route获取某一个值
+        },
     }
 }
 </script>
